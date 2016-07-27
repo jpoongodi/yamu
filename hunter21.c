@@ -1,0 +1,42 @@
+#include<stdio.h>
+main()
+{
+	int a[10][10],i,j,n,r[10]={0},c[10]={0};
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+		scanf("%d",&a[i][j]);
+		if(a[i][j]==0)
+		{
+		r[i]++;
+		c[j]++;
+		}
+		}
+	}
+	for(i=0;i<n;i++)
+	{
+	if(r[i]>0)
+	{
+	j=0;
+         while(j<n)
+	 a[i][j++]=0;
+	}
+	if(c[i]>0)
+	{
+	 j=0;
+	 while(j<n)
+	  a[j++][i]=0;
+	}
+	}
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+		printf("%d ",a[i][j]);
+		}
+		printf("\n");
+	}
+return;
+}
